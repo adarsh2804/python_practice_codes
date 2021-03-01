@@ -1,11 +1,20 @@
-a = 5
-b = 6
+def sort(ls):
 
-# a, b = b, a
+    for i in range(0, len(ls) - 1):
+        minpos = i
 
-a = a ^ b           # xor
-b = a ^ b
-a = a ^ b
+        for j in range(i, len(ls)):
+            if ls[j] < ls[minpos]:     # comparing elements of unsorted(remaining) array with minimum value
+                minpos = j
 
-print(a)
-print(b)
+        temp = ls[i]
+        ls[i] = ls[minpos]
+        ls[minpos] = temp
+
+        print(ls)
+
+
+lst = [5, 3, 8, 6, 7, 2, 9, 4]
+sort(lst)
+
+print(lst)
